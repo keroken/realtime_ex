@@ -5,6 +5,7 @@ const app = express();
 const http = require('http').Server(app);
 //socket.io
 const io = require('socket.io')(http);
+const PORT = process.env.PORT || 5000;
 
 
 // 静的ファイルはpublicフォルダに入れる
@@ -77,6 +78,6 @@ io.on('connection', function(socket) {
 
 
 
-http.listen(3000, function() {
+http.listen(PORT, function() {
     console.log('listening on 3000');
 });
